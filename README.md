@@ -1,2 +1,2 @@
-# ff7-combat-system
+# ff7-combat-system-unity
 FF7 combat system built in Unity.
