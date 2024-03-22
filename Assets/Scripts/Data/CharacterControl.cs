@@ -1,57 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CharacterControl : MonoBehaviour
 {
-    public CharacterData playerData;
-    public CharacterData enemyData;
+    public CharacterData characterData;
+    public CharacterControl targetData;
 
     private void Start()
     {
-        playerData.target = enemyData;
+        characterData.Init();
+
+        characterData.target = targetData.characterData;
         
-        
-        StartCoroutine(TimeRegen());
+        StartCoroutine(characterData.CharacterLoop());
     }
 
     private void Update()
     {
-        if (playerData.IsReadyForAction)
+        if (characterData.IsReadyForAction)
         {
             Debug.Log("ready to attack");
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (characterData.charTeam == CharacterTeam.Friendly && Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("player performed an action");
-                playerData.currentSpeed = 0;
+                characterData.Attack();
             }
         }
     }
-
-    IEnumerator CharacterBehaviour()
-    {
-        yield return new WaitUntil(() => playerData.CanAttackTarget);
-
-        // Wait untl the character has performed an action
-    }
-
-    IEnumerator TimeRegen()
-    {
-        while (true)
-        {
-            if (playerData.currentSpeed >= playerData.maxSpeed)
-            {
-                playerData.currentSpeed = playerData.maxSpeed;
-            }
-            else
-            {
-                // Increase current speed
-                playerData.currentSpeed += Time.deltaTime;
-            }
-        }
-
-        yield return null;
-    }
-
 }

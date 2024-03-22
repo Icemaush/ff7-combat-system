@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1608,74 +1608,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &380001769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 380001771}
-  - component: {fileID: 380001772}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &380001771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380001769}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &380001772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380001769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a779385a7972bae48a2c1ec8d4951b69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData:
-    name: Cloud
-    maxHP: 50
-    currentHP: 50
-    maxMP: 24
-    currentMP: 24
-    maxLB: 10
-    currentLB: 5
-    maxSpeed: 5
-    currentSpeed: 0
-    charState: 0
-    charTeam: 0
-  enemyData:
-    name: Goblin
-    maxHP: 100
-    currentHP: 100
-    maxMP: 100
-    currentMP: 100
-    maxLB: 100
-    currentLB: 100
-    maxSpeed: 10
-    currentSpeed: 3
-    charState: 0
-    charTeam: 1
 --- !u!1 &414197665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,6 +3346,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833584997}
   m_CullTransparentMesh: 1
+--- !u!1 &862539054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862539056}
+  - component: {fileID: 862539055}
+  m_Layer: 0
+  m_Name: EnemyCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &862539055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862539054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779385a7972bae48a2c1ec8d4951b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData:
+    name: Goblin
+    maxHP: 100
+    currentHP: 100
+    maxMP: 100
+    currentMP: 100
+    maxLB: 100
+    currentLB: 100
+    maxSpeed: 10
+    currentSpeed: 10
+    charState: 0
+    charTeam: 0
+    onAttack:
+      m_PersistentCalls:
+        m_Calls: []
+    onWasAttacked:
+      m_PersistentCalls:
+        m_Calls: []
+    playerJustAttacked: 0
+  targetData: {fileID: 1353945628}
+--- !u!4 &862539056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862539054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 908.1181, y: 521.9776, z: -5.5281487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898911551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,6 +4949,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348672859}
   m_CullTransparentMesh: 1
+--- !u!1 &1353945627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353945629}
+  - component: {fileID: 1353945628}
+  m_Layer: 0
+  m_Name: FriendlyCharacter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1353945628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353945627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779385a7972bae48a2c1ec8d4951b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData:
+    name: Cloud
+    maxHP: 100
+    currentHP: 100
+    maxMP: 100
+    currentMP: 100
+    maxLB: 100
+    currentLB: 100
+    maxSpeed: 10
+    currentSpeed: 10
+    charState: 0
+    charTeam: 0
+    onAttack:
+      m_PersistentCalls:
+        m_Calls: []
+    onWasAttacked:
+      m_PersistentCalls:
+        m_Calls: []
+    playerJustAttacked: 0
+  targetData: {fileID: 862539055}
+--- !u!4 &1353945629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353945627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 908.1181, y: 521.9776, z: -5.5281487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361910734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,7 +5050,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 19.057903, y: -12.5}
+  m_AnchoredPosition: {x: 19.057861, y: -12.5}
   m_SizeDelta: {x: -38.115807, y: -25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361910736
@@ -6656,7 +6716,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.623
+  m_Value: 0.477
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6884,6 +6944,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 380001771}
   - {fileID: 2134171414}
   - {fileID: 418592547}
+  - {fileID: 1353945629}
+  - {fileID: 862539056}
